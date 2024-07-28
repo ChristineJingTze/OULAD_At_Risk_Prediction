@@ -184,7 +184,17 @@ if option == "User Input":
 elif option == "CSV Upload":
     st.header("CSV Upload")
     st.info("Upload a CSV file containing the student data to get the risk predictions.")
-    
+    st.markdown("""
+    **Required columns in the CSV file:**
+    - `highest_education`: The highest level of education attained by the student.
+    - `imd_band`: The IMD band representing the student's socio-economic status.
+    - `num_of_prev_attempts`: The number of previous attempts by the student.
+    - `studied_credits`: The number of studied credits by the student.
+    - `before_course_click`: The number of clicks before the course starts.
+    - `after_course_click`: The number of clicks after the course starts.
+    - `final_score`: The student's final score.
+    """)
+
     uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
     
     if uploaded_file is not None:
